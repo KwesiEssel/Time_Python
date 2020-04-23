@@ -1,0 +1,96 @@
+import time
+import datetime
+now = datetime.datetime.now()
+print("Current date and time: ")
+print (now.strftime("%d.%m.%Y, %H:%M"))
+print ("What shall I remind you about?")
+text = str(input())
+print("Who?")
+name = str(input())
+
+
+def difference(h1, m1, h2, m2):
+     
+    # convert h1 : m1 into
+    # minutes
+    t1 = h1 * 60 + m1
+     
+    # convert h2 : m2 into
+    # minutes 
+    t2 = h2 * 60 + m2
+     
+    if (t1 == t2): 
+        print("Both are same times")
+        return
+    else:
+         
+        # calculating the difference
+        diff = t2-t1
+         
+    # calculating hours from
+    # difference
+    h = (int(diff / 60)) % 24
+     
+    # calculating minutes from 
+    # difference
+    m = diff % 60
+ 
+    print(h, ":", m)
+   
+   
+  
+ 
+# Driver's code
+if name == "_main_":
+   
+    hour= (now.strftime("%H"))
+   
+    minute = (now.strftime("%M"))
+   
+    #print ("Zeit")
+    #float = str(input())
+   
+   
+   
+    difference(int(hour),int(minute), 22, 15) #calculate the difference between the giving time and the current time
+import datetime
+import time
+#now = datetime.datetime.now()
+#print("Current date and time: ")
+#print (now.strftime("%d.%m.%Y, %H:%M"))
+while True:
+        uin = input ("Uhrzeit ")
+        time = uin.split(":", 2)
+        print(time[0], time[1], time[2])
+        when_to_stop = 0
+        try:
+                when_to_stop = abs(int(uin))
+        except KeyboardInterrupt:
+            break
+        except:
+            print("Not a number")
+        while when_to_stop > 0:
+            m, s = divmod(when_to_stop, 60)
+            h, m = divmod (m, 60)
+            time_left = str(h).zfill(2) + ":" + str(m).zfill(2) + ":" + str(s).zfill(2)
+            print (time_left + "\r", end="")
+            time.sleep(1)
+            when_to_stop -= 1
+            import time
+           
+
+       
+       
+        print(text)
+        now = datetime.datetime.now()
+        print (now.strftime("%d.%m.%Y, %H:%M"))
+        print ("Kwesi you have a message from "+name + ":"+ "'" + text + "'")
+        print ("RING RING RING")
+   
+        #print("Who?")
+        #name = str(input())
+if input('Do you want to repeat(y/n)') == 'n':
+        break
+
+#output: akutelle zeit und datum,was,wann , wer
+#part 2 automatic countdown after the request
